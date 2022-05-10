@@ -24,7 +24,9 @@
     "globally": "^0.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.3.2",
-    "morgan": "^1.10.0",
     "nodemon": "^2.0.16"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
   }
 }
