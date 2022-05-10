@@ -17,7 +17,7 @@ app.use(cors())
 const MONGODB_URL = "MongoDB: mongodb+srv://imdadulhaque:vGgoxYUNvUZyrFhJ@cluster0.wkwq3.mongodb.net/tour_db?retryWrites=true&w=majority";
 
 
-// !-- PORT Define & MongoDB Connection Established
+// TODO:-- PORT Define & MongoDB Connection Established
 const PORT = process.env.PORT || 5000;
 mongoose.connect(MONGODB_URL)
     .then(() =>{
