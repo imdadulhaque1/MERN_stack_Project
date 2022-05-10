@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "JavaScript",
+    "ReactJS",
+    "NodeJS",
+    "ExpressJS",
+    "MongoDB",
+    "MERN-Projects"
+  ],
+  "author": "Imdadul Haque, <imdadul15-1440@diu.edu.bd>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "globally": "^0.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16"
+  }
+}
