@@ -3,40 +3,32 @@ const app = express();
 const morgan = require('morgan');
 const cors = require('cors');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/userDatabase');
 
 
-// const contactRoute = require('./api/routes/contacts.js');
+// !Password: vGgoxYUNvUZyrFhJ
+// !MongoDB: mongodb+srv://imdadulhaque:<password>@cluster0.wkwq3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 
 app.use(morgan('dev'));
-app.use(cors());
+app.use(express.json({limit:"30mb", extend:true}))
+app.use(express.urlencoded({limit:"30mb", extend:true}))
+app.use(cors())
+
+const MONGODB_URL = "MongoDB: mongodb+srv://imdadulhaque:vGgoxYUNvUZyrFhJ@cluster0.wkwq3.mongodb.net/tour_db?retryWrites=true&w=majority";
 
 
-// ------------> Routing Starting
-// app.use('/api/contacts', contactRoute);
-// ------------> Routing Ended
+// !-- PORT Define & MongoDB Connection Established
+const PORT = process.env.PORT || 5000;
+mongoose.connect(MONGODB_URL)
+    .then(() =>{
+        app.listen(PORT, () =>{
+            console.log(`Server is running on port @${PORT}.`)
+        })
+    })
+    .catch((err) =>{
+        console.log(`${err} did not connect!`)
+    })
 
-// ------------> Starting MongoDB Database connection & check
-const db = mongoose.connection;
-db.on('error', (err) =>{
-    console.log(err);
-})
-db.once('open', () =>{
-    console.log("Database Connection Established!");
-})
-
-
-app.get("/", (req, res) =>{
-    res.send("MERN Projects!")
-})
-
-
-// !-- PORT Define
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () =>{
-    console.log(`Server is running on port @${PORT}.`)
-})
 
 
 
